@@ -38,7 +38,7 @@ variable "ibm_pm_private_ssh_key" {
 }
 
 variable "allow_unverified_ssl" {
-  description = "Communication with vsphere server with self signed certificate"
+  description = "Communication with vSphere server with self signed certificate"
   default     = "true"
 }
 
@@ -462,7 +462,7 @@ variable "DB2Node01_root_disk_size" {
 }
 
 module "provision_proxy" {
-  source 						= "git::https://github.com/IBM-CAMHub-Open/terraform-modules.git?ref=1.0//vmware/proxy"
+  source 						= "git::https://github.com/IBM-CAMHub-Development/terraform-modules.git?ref=1.0//vmware/proxy"
   ip                  = "${var.DB2Node01_ipv4_address}"
   id									= "${vsphere_virtual_machine.DB2Node01.id}"
   ssh_user            = "${var.DB2Node01-os_admin_user}"
